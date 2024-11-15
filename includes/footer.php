@@ -1,3 +1,0 @@
-<footer>
-	Contact information
-</footer>
