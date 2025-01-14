@@ -1,0 +1,44 @@
+name: Build and Deploy Static Site
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2  # Specify PHP version
+
+      # Step 3: Install wget
+      - name: Install wget
+        run: sudo apt-get install -y wget
+
+      # Step 4: Start PHP server and generate static files
+      - name: Generate Static HTML
+        run: |
+          mkdir -p dist
+          php -S localhost:8000 -t . > /dev/null 2>&1 &
+          sleep 2  # Allow the server to start
+          wget --recursive --no-parent --convert-links --directory-prefix=dist http://localhost:8000
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          publish_branch: gh-pages
+          force_orphan: true
