@@ -1,10 +1,10 @@
 <?php $title = "Anton Wittig";
 $content = "portfolio";
-$current_page = "../portfolio";
+$current_page = "portfolio.php";
 
 $nav_links = [
-	"Portfolio" => "../portfolio",
-	"Contact" => "../contact",
+	"Portfolio" => "portfolio.php",
+	"Contact" => "contact.php",
 ];
 
 include "../template.php";
