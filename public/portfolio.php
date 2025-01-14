@@ -7,7 +7,7 @@ $nav_links = [
 	"Contact" => "contact.php",
 ];
 
-include "../template.php";
+include "template.php";
 // <ul>
 // 	<li>
 // 		<article>
