@@ -31,7 +31,7 @@ jobs:
           mkdir -p dist
           php -S localhost:8000 -t public > /dev/null 2>&1 &
           sleep 2  # Allow the server to start
-          wget --recursive --no-parent --convert-links --directory-prefix=dist http://localhost:8000
+          wget --recursive --no-parent --directory-prefix=dist http://localhost:8000
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
@@ -39,6 +39,6 @@ jobs:
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: dist/localhost:8000
           publish_branch: gh-pages
           force_orphan: true
