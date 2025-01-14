@@ -1,9 +1,0 @@
-RewriteEngine on
-#if browser language is "en"
-RewriteCond %{HTTP: Accept-Language} ^en
-#redirect /page to /en/page
-RewriteRule ^((?!en).+)$ /en/$1 [L,R]
-#if browser language is "de"
-RewriteCond %{HTTP: Accept-Language} ^de
-#redirect /page to /de/page
-RewriteRule ^((?!de).+)$ /de/$1 [L,R]
