@@ -29,9 +29,10 @@ jobs:
       - name: Generate Static HTML
         run: |
           mkdir -p dist
-          php -S localhost:8000 -t . > /dev/null 2>&1 &
+          php -S localhost:8000 > /dev/null 2>&1 &
           sleep 2  # Allow the server to start
           wget --recursive --no-parent --convert-links --directory-prefix=dist http://localhost:8000
+          ls ./dist
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
