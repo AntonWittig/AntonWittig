@@ -31,7 +31,13 @@ jobs:
           mkdir -p dist
           php -S localhost:8000 -t public > /dev/null 2>&1 &
           sleep 2  # Allow the server to start
+
           wget --recursive --no-parent --adjust-extension --accept html,css,js,png,jpg,gif,ico --convert-links --directory-prefix=dist http://localhost:8000
+
+          for file in $(find public -name "*.php"); do
+            relative_path=$(realpath --relative-to=public "$file")
+            wget --adjust-extension --convert-links --directory-prefix=dist "http://localhost:8000/$relative_path"
+          done
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
