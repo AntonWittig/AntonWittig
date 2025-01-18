@@ -44,6 +44,7 @@ jobs:
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/localhost:8000
+          publish_dir: dist
           publish_branch: gh-pages
+          cname: www.antonwittig.de
           force_orphan: true
