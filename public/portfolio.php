@@ -6,6 +6,11 @@ $nav_links = [
 	"Contact" => "contact.php",
 ];
 
+ob_start(); ?>
+<p>Hier wird mein Portfolio zu finden sein.</p>
+<p>Come back &#128284;</p>
+<?php $content = ob_get_clean();
+
 include "template.php";
 // <ul>
 // 	<li>

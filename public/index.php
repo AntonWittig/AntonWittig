@@ -6,4 +6,8 @@ $nav_links = [
 	"Contact" => "contact.php",
 ];
 
+ob_start(); ?>
+Hallo und herzlich willkommen auf <strong>dieser</strong> Website!
+<?php $content = ob_get_clean();
+
 include "template.php";
