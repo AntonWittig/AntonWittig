@@ -11,9 +11,13 @@
 
 <body>
 	<header>
+<?php if ($current_page !== "index.php"): ?>
 		<a href="index.php">
 			<h1>Anton Wittig</h1>
 		</a>
+<?php else: ?>
+		<h1>Anton Wittig</h1>
+<?php endif; ?>
 		<nav>
 			<ul>
 <?php foreach ($nav_links as $link_name => $link_url):
