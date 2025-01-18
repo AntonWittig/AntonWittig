@@ -1,4 +1,4 @@
-name: Build and Deploy Static Site
+name: Build Static Site
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -28,10 +28,10 @@ jobs:
       # Step 4: Start PHP server and generate static files
       - name: Generate Static HTML
         run: |
-          for file in $(find public -regex '.*(\.php\|\.html\|\.css\|\.js\|\.png\|\.jpg\|\.gif\|\.ico)'); do
+          for file in $(find public -regex '.*\.php\|.*\.html\|.*\.css\|.*\.js\|.*\.png\|.*\.jpg\|.*\.gif\|.*\.ico)'); do
             relative_path=$(realpath --relative-to=public "$file" | sed s/.php$/.html/)
             mkdir -p "dist/$(dirname $relative_path)"
-            php.exe -f public/index.php | sed s/.php/.html/gm >> dist/$relative_path
+            php.exe -f $file | sed s/.php/.html/gm >> dist/$relative_path
           done
 
           for file in $(find dist -regex '.*template\.html'); do
