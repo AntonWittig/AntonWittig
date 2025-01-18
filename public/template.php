@@ -21,9 +21,9 @@
 		<nav>
 			<ul>
 <?php foreach ($nav_links as $link_name => $link_url):
-	if ($current_page !== $link_url):?>
+	if ($current_page !== $link_url): ?>
 				<li><a href="<?php echo $link_url; ?>"><?php echo $link_name; ?></a></li>
-<?php else:?>
+<?php else: ?>
 				<li><?php echo $link_name; ?></li>
 <?php endif;
 endforeach; ?>
