@@ -1,7 +1,6 @@
-<?php $title = "Anton Wittig";
-$content = "portfolio";
+<?php
+$title = "Anton Wittig";
 $current_page = "portfolio.php";
-
 $nav_links = [
 	"Portfolio" => "portfolio.php",
 	"Contact" => "contact.php",
