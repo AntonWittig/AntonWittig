@@ -27,16 +27,7 @@ jobs:
 
       # Step 4: Start PHP server and generate static files
       - name: Generate Static HTML
-        run: |
-          for file in $(find public -regex '.*\.php\|.*\.html\|.*\.css\|.*\.js\|.*\.png\|.*\.jpg\|.*\.gif\|.*\.ico)'); do
-            relative_path=$(realpath --relative-to=public "$file" | sed s/.php$/.html/)
-            mkdir -p "dist/$(dirname $relative_path)"
-            php -f $file | sed s/.php/.html/gm >> dist/$relative_path
-          done
-
-          for file in $(find dist -regex '.*template\.html'); do
-            rm "$file"
-          done
+        run: ./static-site-gen.sh
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
