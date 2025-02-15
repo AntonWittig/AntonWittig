@@ -1,10 +1,6 @@
 <?php
 $title = "Anton Wittig";
 $current_page = "portfolio.php";
-$nav_links = [
-	"Portfolio" => "portfolio.php",
-	"Contact" => "contact.php",
-];
 
 ob_start(); ?>
 <p>Hier wird mein Portfolio zu finden sein.</p>

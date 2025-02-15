@@ -1,3 +1,10 @@
+<?php
+$nav_links = [
+	"Home" => "index.php",
+	"About" => "about.php",
+	"Portfolio" => "portfolio.php",
+	"Contact" => "contact.php",
+];?>
 <!DOCTYPE html>
 <html lang="en">
 
