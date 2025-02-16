@@ -1,2 +1,5 @@
 # VSCODE files
 .vscode
+
+# Local testing directory
+dist/
