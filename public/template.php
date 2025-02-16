@@ -14,17 +14,11 @@ $nav_links = [
 	<link rel="stylesheet" href="css/style.css">
 	<title><?php echo $title; ?></title>
 	<!-- redirect script -->
+	<script defer src="./js/headerPadding.js"></script>
 </head>
 
 <body>
-	<header>
-<?php if ($current_page !== "index.php"): ?>
-		<a href="index.php">
-			<h1>Anton Wittig</h1>
-		</a>
-<?php else: ?>
-		<h1>Anton Wittig</h1>
-<?php endif; ?>
+	<header id="header">
 		<nav>
 			<ul>
 <?php foreach ($nav_links as $link_name => $link_url):
@@ -37,9 +31,15 @@ endforeach; ?>
 			</ul>
 		</nav>
 	</header>
+	<aside id="left-column">
+
+	</aside>
 	<main>
 		<?php echo $content; ?>
 	</main>
+	<aside id="right-column">
+		
+	</aside>
 	<footer>
 		&copy; 2025 My Website
 	</footer>
