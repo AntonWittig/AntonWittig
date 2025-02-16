@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@layer default, mediaqueries;
+@layer default, mediaqueries, forms;
 
 :root {
 	--header-height: 0;
@@ -22,7 +22,7 @@
 			background: none;
 		}
 
-		background: #80800080;
+		background: #00006080;
 		position: absolute;
 		top: 8px;
 		left: 8px;
@@ -37,12 +37,13 @@
 	}
 
 	aside {
-		background-color: red;
+		background-color: transparent;
 	}
 
 	main {
-		background-color: yellowgreen;
+		background-color: #00000080;
 		margin-top: var(--header-height);
+		padding: 0 8px;
 	}
 
 	body {
@@ -56,6 +57,50 @@
 		text-align: center;
 	}
 
+	.two-columns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@layer forms {
+
+	span[aria-label="required"] {
+		color: red;
+		font-weight: bold;
+	}
+
+	input,
+	textarea {
+		display: block;
+		font: inherit;
+		background: inherit;
+		margin: 0 0 1em;
+		min-height: 40px;
+
+		&:not([type="submit"]) {
+			font-family: monospace;
+
+			&:invalid {
+				border-color: red;
+			}
+
+			&:valid {
+				border-color: green;
+			}
+		}
+	}
+
+	input:not([type="submit"]) {
+		width: 90%;
+		padding: 0.25em 0.75em;
+	}
+
+	textarea {
+		resize: vertical;
+		width: 95%;
+		padding: 0.5em 0.75em;
+	}
 }
 
 @layer mediaqueries {
@@ -75,13 +120,13 @@
 
 	@media screen and (min-width: 481px) and (max-width: 768px) {
 		body {
-			grid-template-columns: 1fr 2fr 1fr;
+			grid-template-columns: 1fr 4fr 1fr;
 		}
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1024px) {
 		body {
-			grid-template-columns: 1fr 2.5fr 1fr;
+			grid-template-columns: 1fr 3.5fr 1fr;
 		}
 	}
 
