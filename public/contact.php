@@ -4,7 +4,7 @@ $current_page = "contact.php";
 
 ob_start(); ?>
 <h1>Contact form</h1>
-		<form method="POST" action="https://212.132.110.174:8273">
+		<form method="POST" action="https://antonwittig.dev:8273/mail">
 			<p>Required fields are followed by <span aria-label="required">*</span>.</p>
 
 			<section class="two-columns">
