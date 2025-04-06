@@ -1,0 +1,22 @@
+# Professional career from newest to latest
+---
+- company:
+    name: dainox GmbH
+    department: NetDevOps
+    website: https://www.dainox.net
+  from: 2025-01-16
+  to: now
+  job-title: Associate NetDevOps Developer
+  description: >
+    TODO
+  focus:
+    - TODO
+  tags:
+    - Backend
+    - Python
+- company:
+    name: Universität des Saarlandes
+    department: Experimentalphysik
+    website:
+  from:
+  to: 2024-
