@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css">
+	<title>Anton Wittig</title>
+	<!-- redirect script -->
+	<script defer src="./js/headerPadding.js"></script>
+</head>
+
+<body>
+	<header id="header">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+	</header>
+	<aside id="left-column">
+
+	</aside>
+	<main>
+		<h1>Contact form</h1>
+		<form method="POST" action="https://antonwittig.dev:8273/mail">
+			<p>Required fields are followed by <span aria-label="required">*</span>.</p>
+
+			<section class="two-columns">
+				<label for="email">
+					Email: <span aria-label="required">*</span>
+					<input required type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="name@example.org"/>
+				</label>
+				
+				<label for="subject">
+					Subject: <span aria-label="required">*</span>
+					<input required type="text" id="subject" name="subject" minlength="10" maxlength="50" placeholder="The subject of your message"/>
+				</label>
+			</section>
+			
+			<label for="message">
+				Message: <span aria-label="required">*</span>
+				<textarea required type="text" id="message" name="message" minlength="150" maxlength="1500" rows="5" placeholder="Enter your message to here."></textarea>
+			</label>
+
+			<input type="submit">
+		</form>
+	</main>
+	<aside id="right-column">
+		
+	</aside>
+	<footer>
+		&copy; 2025 My Website
+	</footer>
+</body>
+
+</html>
